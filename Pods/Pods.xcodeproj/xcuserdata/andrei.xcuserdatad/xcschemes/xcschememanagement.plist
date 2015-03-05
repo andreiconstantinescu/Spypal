@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-spypal-MBLocationManager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-spypal.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>207BC7FA1FB37B707E3D13D4</key>
+		<key>14CDA5F4632F320956E91616</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3BAABE674692494D39DEC877</key>
+		<key>30C86FC6A0CA0DA00C5A59B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>32B3B727C8A10CDC1EEEBE0E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "14CDA5F4632F320956E91616"
-               BuildableName = "libPods-spypal.a"
-               BlueprintName = "Pods-spypal"
+               BlueprintIdentifier = "32B3B727C8A10CDC1EEEBE0E"
+               BuildableName = "libPods-spypal-MBLocationManager.a"
+               BlueprintName = "Pods-spypal-MBLocationManager"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

@@ -1,10 +1,13 @@
 PODS:
   - AVHexColor (1.2.0)
+  - MBLocationManager (0.2.0)
 
 DEPENDENCIES:
   - AVHexColor (~> 1.2.0)
+  - MBLocationManager
 
 SPEC CHECKSUMS:
   AVHexColor: b47099552819a98dc58d7931f0f43eb6e2308342
+  MBLocationManager: 6abf0e3b213ca9031503141f30b2780f392d345d
 
 COCOAPODS: 0.35.0

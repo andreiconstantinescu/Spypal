@@ -1,0 +1,5 @@
+#include "Pods-spypal-MBLocationManager.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/MBLocationManager" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AVHexColor" "${PODS_ROOT}/Headers/Public/MBLocationManager"
+OTHER_LDFLAGS = ${PODS_SPYPAL_MBLOCATIONMANAGER_OTHER_LDFLAGS} -ObjC
+PODS_ROOT = ${SRCROOT}

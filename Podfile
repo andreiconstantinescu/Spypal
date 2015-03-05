@@ -3,6 +3,7 @@
 
 target 'spypal' do
 	pod 'AVHexColor', '~> 1.2.0'
+	pod 'MBLocationManager'
 end
 
 target 'spypalTests' do
