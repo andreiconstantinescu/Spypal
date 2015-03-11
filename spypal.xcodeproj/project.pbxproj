@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B0491451AB0A6C100724DB8 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0491421AB0A6C100724DB8 /* TwitterKit.framework */; };
+		5B0491461AB0A6C100724DB8 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5B0491431AB0A6C100724DB8 /* TwitterKitResources.bundle */; };
+		5B0491471AB0A6C100724DB8 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0491441AB0A6C100724DB8 /* Fabric.framework */; };
+		5B04914E1AB0AFF000724DB8 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B04914C1AB0AFF000724DB8 /* Login.m */; };
+		5B04914F1AB0AFF000724DB8 /* Login.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B04914D1AB0AFF000724DB8 /* Login.xib */; };
 		759AF0011AA885B10039D425 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759AEFFF1AA885B10039D425 /* Parse.framework */; };
 		759AF0031AA885E70039D425 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759AF0021AA885E70039D425 /* AudioToolbox.framework */; };
 		759AF0051AA885EE0039D425 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759AF0041AA885EE0039D425 /* CFNetwork.framework */; };
@@ -44,6 +49,12 @@
 
 /* Begin PBXFileReference section */
 		265C474F1172EAFE4E81D3EB /* libPods-spypal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-spypal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B0491421AB0A6C100724DB8 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		5B0491431AB0A6C100724DB8 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		5B0491441AB0A6C100724DB8 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		5B04914B1AB0AFF000724DB8 /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
+		5B04914C1AB0AFF000724DB8 /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
+		5B04914D1AB0AFF000724DB8 /* Login.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Login.xib; sourceTree = "<group>"; };
 		759AEFFE1AA885B10039D425 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		759AEFFF1AA885B10039D425 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		759AF0021AA885E70039D425 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -88,6 +99,7 @@
 				759AF01E1AA887540039D425 /* libz.1.1.3.dylib in Frameworks */,
 				759AF0171AA8863A0039D425 /* libsqlite3.dylib in Frameworks */,
 				759AF0131AA886280039D425 /* SystemConfiguration.framework in Frameworks */,
+				5B0491471AB0A6C100724DB8 /* Fabric.framework in Frameworks */,
 				759AF0111AA8861F0039D425 /* StoreKit.framework in Frameworks */,
 				759AF00F1AA886170039D425 /* Security.framework in Frameworks */,
 				759AF00D1AA886100039D425 /* QuartzCore.framework in Frameworks */,
@@ -96,6 +108,7 @@
 				759AF0071AA885F90039D425 /* CoreGraphics.framework in Frameworks */,
 				759AF0051AA885EE0039D425 /* CFNetwork.framework in Frameworks */,
 				759AF0031AA885E70039D425 /* AudioToolbox.framework in Frameworks */,
+				5B0491451AB0A6C100724DB8 /* TwitterKit.framework in Frameworks */,
 				90D491EC739D30E75825F9D1 /* libPods-spypal.a in Frameworks */,
 				759AF0011AA885B10039D425 /* Parse.framework in Frameworks */,
 				759AF0181AA886F60039D425 /* Bolts.framework in Frameworks */,
@@ -115,6 +128,9 @@
 		75C08FD41AA884330091440A = {
 			isa = PBXGroup;
 			children = (
+				5B0491421AB0A6C100724DB8 /* TwitterKit.framework */,
+				5B0491431AB0A6C100724DB8 /* TwitterKitResources.bundle */,
+				5B0491441AB0A6C100724DB8 /* Fabric.framework */,
 				75C08FDF1AA884330091440A /* spypal */,
 				75C08FF91AA884330091440A /* spypalTests */,
 				75C08FDE1AA884330091440A /* Products */,
@@ -140,6 +156,9 @@
 				75C08FE71AA884330091440A /* ViewController.h */,
 				75C08FE81AA884330091440A /* ViewController.m */,
 				75C08FEA1AA884330091440A /* Main.storyboard */,
+				5B04914B1AB0AFF000724DB8 /* Login.h */,
+				5B04914C1AB0AFF000724DB8 /* Login.m */,
+				5B04914D1AB0AFF000724DB8 /* Login.xib */,
 				75C08FED1AA884330091440A /* Images.xcassets */,
 				75C08FEF1AA884330091440A /* LaunchScreen.xib */,
 				75C08FE01AA884330091440A /* Supporting Files */,
@@ -219,6 +238,7 @@
 				75C08FDA1AA884330091440A /* Frameworks */,
 				75C08FDB1AA884330091440A /* Resources */,
 				52BF65DE404B2915C6BC7C16 /* Copy Pods Resources */,
+				5B0491411AB0A5DF00724DB8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -291,9 +311,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B0491461AB0A6C100724DB8 /* TwitterKitResources.bundle in Resources */,
 				75C08FEC1AA884330091440A /* Main.storyboard in Resources */,
 				75C08FF11AA884330091440A /* LaunchScreen.xib in Resources */,
 				75C08FEE1AA884330091440A /* Images.xcassets in Resources */,
+				5B04914F1AB0AFF000724DB8 /* Login.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +344,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-spypal/Pods-spypal-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5B0491411AB0A5DF00724DB8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run c371adeca0f0265c75c3a1798de305eaa81e06a1 8e0f3b9d9e3d306e2517210be3355335bc89fd0b2b464d38a4ffaed129161a0d";
+		};
 		ED4CE2C8D131389549A811E0 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -344,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B04914E1AB0AFF000724DB8 /* Login.m in Sources */,
 				75C08FE91AA884330091440A /* ViewController.m in Sources */,
 				75C08FE61AA884330091440A /* AppDelegate.m in Sources */,
 				75C08FE31AA884330091440A /* main.m in Sources */,
