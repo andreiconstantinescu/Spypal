@@ -55,9 +55,6 @@
     _latitude.text = [NSString stringWithFormat:@"%.8f",crnLoc.coordinate.latitude];
     _longitude.text = [NSString stringWithFormat:@"%.8f",crnLoc.coordinate.longitude];
     _speed.text = [NSString stringWithFormat:@"%.1f m/s", crnLoc.speed];
-
-    
-    NSLog(@"dede %d", 7);
 }
 
 - (void)didReceiveMemoryWarning {
