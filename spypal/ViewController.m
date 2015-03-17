@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *latitude;
 @property (weak, nonatomic) IBOutlet UILabel *longitude;
 @property (weak, nonatomic) IBOutlet UILabel *speed;
+- (IBAction)sendToParse:(id)sender;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @end
 
@@ -65,5 +66,20 @@
 - (IBAction)updateLocation:(id)sender {
 
     //requesting location updates
+}
+- (IBAction)sendToParse:(id)sender {
+    
+    PFObject *location = [PFObject objectWithClassName:@"currentLocations"];
+    location[@"latitude"] = _latitude.text;
+    location[@"longitude"] = _longitude.text;
+    location[@"speed"] = _speed.text;
+    [location saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"a mers");
+        } else {
+            NSLog(@"nu a mers");
+        }
+    }];
+    
 }
 @end
