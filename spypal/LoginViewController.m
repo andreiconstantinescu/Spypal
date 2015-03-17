@@ -21,8 +21,10 @@
     [super viewDidLoad];
     
     DGTAuthenticateButton *authenticateButton = [DGTAuthenticateButton buttonWithAuthenticationCompletion:^(DGTSession *session, NSError *error) {
-        ViewController *mainScreen = [[ViewController alloc] init];
-        [self presentViewController:mainScreen animated:YES completion:nil];
+        NSString * storyboardName = @"Main";
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+        UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"LocationView"];
+        [self presentViewController:vc animated:YES completion:nil];
         // play with Digits session
     }];
     authenticateButton.center = self.view.center;
