@@ -19,18 +19,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    DGTAuthenticateButton *authenticateButton = [DGTAuthenticateButton buttonWithAuthenticationCompletion:^(DGTSession *session, NSError *error) {
-        NSString * storyboardName = @"Main";
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-        UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"LocationView"];
-        [self presentViewController:vc animated:YES completion:nil];
-        // play with Digits session
-    }];
-    authenticateButton.center = self.view.center;
-    [self.view addSubview:authenticateButton];
+        //Verifying if a user has already signed up
+       if ([[NSUserDefaults standardUserDefaults] objectForKey:@"digitsSessionAuthToken"] && [[NSUserDefaults standardUserDefaults] objectForKey:@"digitsSessionAuthTokenSecret"])
+       {
+            DGTAuthenticateButton *authenticateButton = [DGTAuthenticateButton buttonWithAuthenticationCompletion:^(DGTSession *session, NSError *error) {
+                NSString * storyboardName = @"Main";
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+                UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"LocationView"];
+                [self presentViewController:vc animated:YES completion:nil];
+               [[NSUserDefaults standardUserDefaults] setObject:session.authToken forKey:@"digitsSessionAuthToken"];
+               [[NSUserDefaults standardUserDefaults] setObject:session.authTokenSecret forKey:@"digitsSessionAuthTokenSecret"];
+               [[NSUserDefaults standardUserDefaults] setObject:session.phoneNumber forKey:@"phoneNumber"];
+                //[[Digits sharedInstance] session].phoneNumber;
+                // play with Digits session
+            }];
+            authenticateButton.center = self.view.center;
+            [self.view addSubview:authenticateButton];
+       } else {
+           NSString * storyboardName = @"Main";
+           UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+           UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"LocationView"];
+           [self presentViewController:vc animated:YES completion:nil];
 
-    
+       }
     // Do any additional setup after loading the view from its nib.
 }
 

@@ -1,0 +1,11 @@
+{
+    "applications": {
+        "Spypal": {
+            "applicationId": "CTdwrf0g5o5bOimHLXcYvF4oDGHUeX8SvOxMaUfU", 
+            "masterKey": "evdK1uqWPeP4QVdaDvqEt43AsNjnvGNMhdyeZCQo"
+        }, 
+        "_default": {
+            "link": "Spypal"
+        }
+    }
+}
