@@ -30,6 +30,27 @@
                [[NSUserDefaults standardUserDefaults] setObject:session.authToken forKey:@"digitsSessionAuthToken"];
                [[NSUserDefaults standardUserDefaults] setObject:session.authTokenSecret forKey:@"digitsSessionAuthTokenSecret"];
                [[NSUserDefaults standardUserDefaults] setObject:session.phoneNumber forKey:@"phoneNumber"];
+                //check if number is already in use
+                PFQuery *query = [PFQuery queryWithClassName:@"User"];
+                [query whereKey:@"phoneNumber" equalTo:session.phoneNumber];
+                
+                if (![query getFirstObject]) {
+                    //if a user never used the app
+                    PFObject *userData = [PFObject objectWithClassName:@"User"];
+                    userData[@"nickname"] = @"Dummy";
+                    userData[@"phoneNumber"] = session.phoneNumber;
+                    userData[@"gravatarEmailHash"] = @"something";
+                    userData[@"currentLocation"] = @"";
+                    userData[@"pastLocations"] = @[];
+                    [userData saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                        if (succeeded) {
+                            // The object has been saved.
+                        } else {
+                            // There was a problem, check error.description
+                        }
+                    }];
+                    
+                }
                 //[[Digits sharedInstance] session].phoneNumber;
                 // play with Digits session
             }];
