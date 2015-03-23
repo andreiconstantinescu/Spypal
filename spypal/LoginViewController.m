@@ -23,7 +23,7 @@
     DGTAuthenticateButton *authenticateButton = [DGTAuthenticateButton buttonWithAuthenticationCompletion:^(DGTSession *session, NSError *error) {
         NSString * storyboardName = @"Main";
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-        UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"LocationView"];
+        UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"TabBarMainView"];
         [self presentViewController:vc animated:YES completion:nil];
         // play with Digits session
     }];
