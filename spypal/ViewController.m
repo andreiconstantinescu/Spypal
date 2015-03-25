@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *latitude;
 @property (weak, nonatomic) IBOutlet UILabel *longitude;
 @property (weak, nonatomic) IBOutlet UILabel *speed;
-- (IBAction)updateUserLocation:(id)sender;
+- (IBAction)sendtoParse:(id)sender;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @end
 
@@ -51,7 +51,10 @@
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     CLLocation *crnLoc = [locations lastObject];
-    [[NSUserDefaults standardUserDefaults] setObject:crnLoc forKey:@"currentLocation"];
+    NSString *lat =  [NSString stringWithFormat:@"%.8f",crnLoc.coordinate.latitude];
+    NSString *lon =  [NSString stringWithFormat:@"%.8f",crnLoc.coordinate.longitude];
+    [[NSUserDefaults standardUserDefaults] setObject:lat forKey:@"currentLocationLat"];
+    [[NSUserDefaults standardUserDefaults] setObject:lon forKey:@"currentLocationLon"];
     _latitude.text = [NSString stringWithFormat:@"%.8f",crnLoc.coordinate.latitude];
     _longitude.text = [NSString stringWithFormat:@"%.8f",crnLoc.coordinate.longitude];
     _speed.text = [NSString stringWithFormat:@"%.1f m/s", crnLoc.speed];
@@ -67,7 +70,7 @@
 
     //requesting location updates
 }
-- (IBAction)updateUserLocation:(id)sender {
+- (IBAction)sendToParse:(id)sender {
 //    Cod vechi
 //
 //    PFObject *location = [PFObject objectWithClassName:@"currentLocations"];
@@ -90,24 +93,30 @@
 //            NSLog(@"nu a mers si la user");
 //        }
 //    }];
-
+//
     PFQuery *query = [PFQuery queryWithClassName:@"User"];
     
     // Retrieve the user by phone number
     NSString *phoneNumber = [[NSUserDefaults standardUserDefaults] objectForKey:@"phoneNumber"];
+    NSLog(@"%@", phoneNumber);
+    
     [query whereKey:@"phoneNumber" equalTo:phoneNumber ];
     [query findObjectsInBackgroundWithBlock:^(NSArray *userObjects, NSError *error) {
-        
+    
         if (!error) {
             NSLog(@"Successfully retrieved.");
             for (PFObject *userObject in userObjects){
                 // TODO de facut obiect cu long si lat
 //                userObject[@"currentLocationLong"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentLong"];
-                userObject[@"currentLocation"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentLocation"];
+                userObject[@"currentLocationLat"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentLocationLat"];
+                userObject[@"currentLocationLon"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentLocationLon"];
                 [userObject saveInBackground];
             }
         }
     }];
+//
+}
 
+- (IBAction)PARSE:(UIButton *)sender {
 }
 @end

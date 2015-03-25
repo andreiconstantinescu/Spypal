@@ -19,52 +19,93 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        //Verifying if a user has already signed up
-       if ([[NSUserDefaults standardUserDefaults] objectForKey:@"digitsSessionAuthToken"] && [[NSUserDefaults standardUserDefaults] objectForKey:@"digitsSessionAuthTokenSecret"])
-       {
+    
+        
             DGTAuthenticateButton *authenticateButton = [DGTAuthenticateButton buttonWithAuthenticationCompletion:^(DGTSession *session, NSError *error) {
                 NSString * storyboardName = @"Main";
                 UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
                 UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"LocationView"];
                 [self presentViewController:vc animated:YES completion:nil];
-               [[NSUserDefaults standardUserDefaults] setObject:session.authToken forKey:@"digitsSessionAuthToken"];
-               [[NSUserDefaults standardUserDefaults] setObject:session.authTokenSecret forKey:@"digitsSessionAuthTokenSecret"];
-               [[NSUserDefaults standardUserDefaults] setObject:session.phoneNumber forKey:@"phoneNumber"];
-                //check if number is already in use
+                [[NSUserDefaults standardUserDefaults] setObject:session.authToken forKey:@"digitsSessionAuthToken"];
+                [[NSUserDefaults standardUserDefaults] setObject:session.authTokenSecret forKey:@"digitsSessionAuthTokenSecret"];
+                [[NSUserDefaults standardUserDefaults] setObject:session.phoneNumber forKey:@"phoneNumber"];
+
                 PFQuery *query = [PFQuery queryWithClassName:@"User"];
                 [query whereKey:@"phoneNumber" equalTo:session.phoneNumber];
-                
                 if (![query getFirstObject]) {
-                    //if a user never used the app
-                    PFObject *userData = [PFObject objectWithClassName:@"User"];
-                    userData[@"nickname"] = @"Dummy";
-                    userData[@"phoneNumber"] = session.phoneNumber;
-                    userData[@"gravatarEmailHash"] = @"something";
-                    userData[@"currentLocation"] = @"";
-                    userData[@"pastLocations"] = @[];
-                    [userData saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                        if (succeeded) {
-                            // The object has been saved.
-                        } else {
-                            // There was a problem, check error.description
-                        }
-                    }];
-                    
+                    NSLog(@"da");
                 }
-                //[[Digits sharedInstance] session].phoneNumber;
                 // play with Digits session
             }];
+            
+            
+        
+    
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"digitsSessionAuthToken"] && [[NSUserDefaults standardUserDefaults] objectForKey:@"digitsSessionAuthTokenSecret"]) {
             authenticateButton.center = self.view.center;
             [self.view addSubview:authenticateButton];
-       } else {
-           NSString * storyboardName = @"Main";
-           UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-           UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"LocationView"];
-           [self presentViewController:vc animated:YES completion:nil];
+    } else {
+        NSLog(@"NU");
+        NSString * storyboardName = @"Main";
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+        UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"LocationView"];
+        [self presentViewController:vc animated:YES completion:nil];
+
+    }
+
+    
+                            //                  DGTAuthenticateButton *authenticateButton = [DGTAuthenticateButton buttonWithAuthenticationCompletion:^(DGTSession *session, NSError *error) {
+                            //                NSString * storyboardName = @"Main";
+                            //                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+                            //                UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"LocationView"];
+                            //                [self presentViewController:vc animated:YES completion:nil];
+//                                           [[NSUserDefaults standardUserDefaults] setObject:session.authToken forKey:@"digitsSessionAuthToken"];
+//                                           [[NSUserDefaults standardUserDefaults] setObject:session.authTokenSecret forKey:@"digitsSessionAuthTokenSecret"];
+//                                           [[NSUserDefaults standardUserDefaults] setObject:session.phoneNumber forKey:@"phoneNumber"];
+                            //
+                            //                //check if number is already in use
+//                                            PFQuery *query = [PFQuery queryWithClassName:@"User"];
+//                                            [query whereKey:@"phoneNumber" equalTo:session.phoneNumber];
+//                                                            if (![query getFirstObject]) {
+//                                                                NSLog(@"da");
+                            //                    //if a user never used the app
+                            //                    PFObject *userData = [PFObject objectWithClassName:@"User"];
+                            //                    userData[@"nickname"] = @"Dummy";
+                            //                    userData[@"phoneNumber"] = session.phoneNumber;
+                            //                    userData[@"gravatarEmailHash"] = @"something";
+                            //                    userData[@"currentLocationLat"] = @"";
+                            //                    userData[@"currentLocationLon"] = @"";
+                            //                    userData[@"pastLocations"] = @[];
+                            //                    [userData saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                            //                        if (succeeded) {
+                            //                            NSLog(@"%@", session.phoneNumber);
+                            //                            // The object has been saved.
+                            //                        } else {
+                            //                            NSLog(@"AAAAA");
+                            //// There was a problem, check error.description
+                            //                        }
+                            //                    }];
+                            //                    
+                            //                }
+                            //                //[[Digits sharedInstance] session].phoneNumber;
+                            //                // play with Digits session
+                            //            }];
+    //Verifying if a user has already signed up
+//    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"digitsSessionAuthToken"] && [[NSUserDefaults standardUserDefaults] objectForKey:@"digitsSessionAuthTokenSecret"])
+//    {
+//
+                            //            authenticateButton.center = self.view.center;
+                            //            [self.view addSubview:authenticateButton];
+//       } else {
+//           NSString * storyboardName = @"Main";
+//           UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+//           UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"LocationView"];
+//           [self presentViewController:vc animated:YES completion:nil];
+//           NSLog(@"%@", session.phoneNumber);
 
        }
     // Do any additional setup after loading the view from its nib.
-}
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
