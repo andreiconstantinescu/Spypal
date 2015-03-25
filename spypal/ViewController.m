@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import <Fabric/Fabric.h>
+#import <TwitterKit/TwitterKit.h>
+
 
 @interface ViewController () <CLLocationManagerDelegate>
 
@@ -14,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *longitude;
 @property (weak, nonatomic) IBOutlet UILabel *speed;
 - (IBAction)sendtoParse:(id)sender;
+- (IBAction)logout:(id)sender;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @end
 
@@ -118,5 +122,8 @@
 }
 
 - (IBAction)PARSE:(UIButton *)sender {
+}
+- (IBAction)logout:(id)sender {
+    [[Digits sharedInstance] logOut];
 }
 @end

@@ -19,7 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
         
             DGTAuthenticateButton *authenticateButton = [DGTAuthenticateButton buttonWithAuthenticationCompletion:^(DGTSession *session, NSError *error) {
                 NSString * storyboardName = @"Main";
@@ -35,6 +34,8 @@
                 if (![query getFirstObject]) {
                     NSLog(@"da");
                 }
+                
+
                 // play with Digits session
             }];
             
