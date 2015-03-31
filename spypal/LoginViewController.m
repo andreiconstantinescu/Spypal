@@ -19,7 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
             DGTAuthenticateButton *authenticateButton = [DGTAuthenticateButton buttonWithAuthenticationCompletion:^(DGTSession *session, NSError *error) {
                 NSString * storyboardName = @"Main";
                 UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
@@ -28,11 +27,24 @@
                 [[NSUserDefaults standardUserDefaults] setObject:session.authToken forKey:@"digitsSessionAuthToken"];
                 [[NSUserDefaults standardUserDefaults] setObject:session.authTokenSecret forKey:@"digitsSessionAuthTokenSecret"];
                 [[NSUserDefaults standardUserDefaults] setObject:session.phoneNumber forKey:@"phoneNumber"];
-
+                
                 PFQuery *query = [PFQuery queryWithClassName:@"User"];
                 [query whereKey:@"phoneNumber" equalTo:session.phoneNumber];
                 if (![query getFirstObject]) {
-                    NSLog(@"da");
+                    PFObject *userData = [PFObject objectWithClassName:@"User"];
+                    userData[@"nickname"] = @"Nickname";
+                    userData[@"phoneNumber"] = session.phoneNumber;
+                    userData[@"gravatarEmailHash"] = @"Insert mail";
+                    userData[@"currentLocationLat"] = @"";
+                    userData[@"currentLocationLon"] = @"";
+                    userData[@"pastLocations"] = @[ ];
+                    [userData saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                        if (succeeded) {
+                            // The object has been saved.
+                        } else {
+                            // There was a problem, check error.description
+                        }
+                    }];
                 }
                 
 
