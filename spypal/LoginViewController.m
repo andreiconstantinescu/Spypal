@@ -25,10 +25,36 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
         UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"TabBarMainView"];
         [self presentViewController:vc animated:YES completion:nil];
+        [[NSUserDefaults standardUserDefaults] setObject:session.authToken forKey:@"digitsSessionAuthToken"];
+        [[NSUserDefaults standardUserDefaults] setObject:session.authTokenSecret forKey:@"digitsSessionAuthTokenSecret"];
+        NSLog(@"%@",session.phoneNumber);
+        [[NSUserDefaults standardUserDefaults] setObject:session.phoneNumber forKey:@"phoneNumber"];
+        
+        PFQuery *query = [PFQuery queryWithClassName:@"User"];
+        [query whereKey:@"phoneNumber" equalTo:session.phoneNumber];
+        if (![query getFirstObject]) {
+            PFObject *userData = [PFObject objectWithClassName:@"User"];
+            userData[@"nickname"] = @"Nickname";
+            userData[@"phoneNumber"] = session.phoneNumber;
+            userData[@"gravatarEmailHash"] = @"Insert mail";
+            userData[@"currentLocationLat"] = @"";
+            userData[@"currentLocationLon"] = @"";
+            userData[@"pastLocations"] = @[ ];
+            [userData saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    // The object has been saved.
+                } else {
+                    // There was a problem, check error.description
+                }
+            }];
+        }
+        
+        
         // play with Digits session
     }];
     authenticateButton.center = self.view.center;
     [self.view addSubview:authenticateButton];
+    
 
     
     // Do any additional setup after loading the view from its nib.
