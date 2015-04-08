@@ -103,7 +103,7 @@
         <!--Item 2-->
         <scene sceneID="H51-Yc-mbD">
             <objects>
-                <viewController id="8km-k9-bLw" sceneMemberID="viewController">
+                <viewController id="8km-k9-bLw" customClass="ContactsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5nL-d3-waU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

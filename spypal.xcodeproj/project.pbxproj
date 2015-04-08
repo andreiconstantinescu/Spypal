@@ -35,6 +35,7 @@
 		75C4BD331AB0B8AC0000CFF1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75C4BD311AB0B8AC0000CFF1 /* LoginViewController.m */; };
 		75C4BD341AB0B8AC0000CFF1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75C4BD321AB0B8AC0000CFF1 /* LoginViewController.xib */; };
 		75C8C9C31ACB092500081D41 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75C8C9C21ACB092500081D41 /* ProfileViewController.m */; };
+		75E968341ACC4EA200FCCE0B /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E968331ACC4EA200FCCE0B /* ContactsViewController.m */; };
 		90D491EC739D30E75825F9D1 /* libPods-spypal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C474F1172EAFE4E81D3EB /* libPods-spypal.a */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,8 @@
 		75C4BD321AB0B8AC0000CFF1 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		75C8C9C11ACB092500081D41 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		75C8C9C21ACB092500081D41 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		75E968321ACC4EA200FCCE0B /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
+		75E968331ACC4EA200FCCE0B /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		E3F845E71538B62F24C2E5DA /* Pods-spypal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spypal.release.xcconfig"; path = "Pods/Target Support Files/Pods-spypal/Pods-spypal.release.xcconfig"; sourceTree = "<group>"; };
 		F9BABC2047FCB5B7A9F22DDB /* Pods-spypal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spypal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-spypal/Pods-spypal.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +161,8 @@
 				75C08FE51AA884330091440A /* AppDelegate.m */,
 				75C08FE71AA884330091440A /* ViewController.h */,
 				75C08FE81AA884330091440A /* ViewController.m */,
+				75E968321ACC4EA200FCCE0B /* ContactsViewController.h */,
+				75E968331ACC4EA200FCCE0B /* ContactsViewController.m */,
 				75C4BD301AB0B8AC0000CFF1 /* LoginViewController.h */,
 				75C4BD311AB0B8AC0000CFF1 /* LoginViewController.m */,
 				75C4BD321AB0B8AC0000CFF1 /* LoginViewController.xib */,
@@ -385,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75C4BD331AB0B8AC0000CFF1 /* LoginViewController.m in Sources */,
+				75E968341ACC4EA200FCCE0B /* ContactsViewController.m in Sources */,
 				75C08FE91AA884330091440A /* ViewController.m in Sources */,
 				75C08FE61AA884330091440A /* AppDelegate.m in Sources */,
 				75C08FE31AA884330091440A /* main.m in Sources */,

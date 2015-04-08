@@ -58,17 +58,17 @@
     authenticateButton.center = self.view.center;
     [self.view addSubview:authenticateButton];
     
-
-    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"nickname"] isEqualToString:@""] && [[[NSUserDefaults standardUserDefaults] objectForKey:@"email"] isEqualToString:@""]) {
-        NSLog(@"MERGE!");
-    } else {
-        NSLog(@"NU");
-        NSString * storyboardName = @"Main";
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-        UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"TabBarMainView"];
-        [self presentViewController:vc animated:YES completion:nil];
-        
-    }
+//
+//    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"nickname"] isEqualToString:@""] && [[[NSUserDefaults standardUserDefaults] objectForKey:@"email"] isEqualToString:@""]) {
+//        NSLog(@"MERGE!");
+//    } else {
+//        NSLog(@"NU");
+//        NSString * storyboardName = @"Main";
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+//        UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"TabBarMainView"];
+//        [self presentViewController:vc animated:YES completion:nil];
+//        
+//    }
     // Do any additional setup after loading the view from its nib.
 }
 
