@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		759AF0011AA885B10039D425 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759AEFFF1AA885B10039D425 /* Parse.framework */; };
+		752BC7B21AD592200027678A /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BC7B11AD592200027678A /* FriendsViewController.m */; };
+		7581297C1AEEBFEC00D555DA /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7581297B1AEEBFEC00D555DA /* TableViewCell.m */; };
+		7581297F1AEF080800D555DA /* FriendDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7581297E1AEF080800D555DA /* FriendDetailsViewController.m */; };
+		7582F8821AED027900E41761 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7582F8801AED027900E41761 /* Bolts.framework */; };
+		7582F8831AED027900E41761 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7582F8811AED027900E41761 /* Parse.framework */; };
 		759AF0031AA885E70039D425 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759AF0021AA885E70039D425 /* AudioToolbox.framework */; };
 		759AF0051AA885EE0039D425 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759AF0041AA885EE0039D425 /* CFNetwork.framework */; };
 		759AF0071AA885F90039D425 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759AF0061AA885F90039D425 /* CoreGraphics.framework */; };
@@ -18,7 +22,6 @@
 		759AF0111AA8861F0039D425 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759AF0101AA8861F0039D425 /* StoreKit.framework */; };
 		759AF0131AA886280039D425 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759AF0121AA886280039D425 /* SystemConfiguration.framework */; };
 		759AF0171AA8863A0039D425 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 759AF0161AA8863A0039D425 /* libsqlite3.dylib */; };
-		759AF0181AA886F60039D425 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759AEFFE1AA885B10039D425 /* Bolts.framework */; };
 		759AF01E1AA887540039D425 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 759AF01D1AA887540039D425 /* libz.1.1.3.dylib */; };
 		759AF01F1AA887690039D425 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759AF0191AA8871C0039D425 /* Accounts.framework */; };
 		759AF0211AA887810039D425 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759AF0201AA887810039D425 /* Social.framework */; };
@@ -35,7 +38,6 @@
 		75C4BD331AB0B8AC0000CFF1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75C4BD311AB0B8AC0000CFF1 /* LoginViewController.m */; };
 		75C4BD341AB0B8AC0000CFF1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75C4BD321AB0B8AC0000CFF1 /* LoginViewController.xib */; };
 		75C8C9C31ACB092500081D41 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75C8C9C21ACB092500081D41 /* ProfileViewController.m */; };
-		75E968341ACC4EA200FCCE0B /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E968331ACC4EA200FCCE0B /* ContactsViewController.m */; };
 		90D491EC739D30E75825F9D1 /* libPods-spypal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C474F1172EAFE4E81D3EB /* libPods-spypal.a */; };
 /* End PBXBuildFile section */
 
@@ -51,8 +53,14 @@
 
 /* Begin PBXFileReference section */
 		265C474F1172EAFE4E81D3EB /* libPods-spypal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-spypal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		759AEFFE1AA885B10039D425 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		759AEFFF1AA885B10039D425 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		752BC7B01AD592200027678A /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
+		752BC7B11AD592200027678A /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		7581297A1AEEBFEC00D555DA /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		7581297B1AEEBFEC00D555DA /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		7581297D1AEF080800D555DA /* FriendDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDetailsViewController.h; sourceTree = "<group>"; };
+		7581297E1AEF080800D555DA /* FriendDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetailsViewController.m; sourceTree = "<group>"; };
+		7582F8801AED027900E41761 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		7582F8811AED027900E41761 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		759AF0021AA885E70039D425 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		759AF0041AA885EE0039D425 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		759AF0061AA885F90039D425 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -89,8 +97,6 @@
 		75C4BD321AB0B8AC0000CFF1 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		75C8C9C11ACB092500081D41 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		75C8C9C21ACB092500081D41 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
-		75E968321ACC4EA200FCCE0B /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
-		75E968331ACC4EA200FCCE0B /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		E3F845E71538B62F24C2E5DA /* Pods-spypal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spypal.release.xcconfig"; path = "Pods/Target Support Files/Pods-spypal/Pods-spypal.release.xcconfig"; sourceTree = "<group>"; };
 		F9BABC2047FCB5B7A9F22DDB /* Pods-spypal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spypal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-spypal/Pods-spypal.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +110,8 @@
 				759AF01F1AA887690039D425 /* Accounts.framework in Frameworks */,
 				759AF01E1AA887540039D425 /* libz.1.1.3.dylib in Frameworks */,
 				759AF0171AA8863A0039D425 /* libsqlite3.dylib in Frameworks */,
+				7582F8831AED027900E41761 /* Parse.framework in Frameworks */,
+				7582F8821AED027900E41761 /* Bolts.framework in Frameworks */,
 				759AF0131AA886280039D425 /* SystemConfiguration.framework in Frameworks */,
 				75C4BD2F1AB0B7660000CFF1 /* Fabric.framework in Frameworks */,
 				759AF0111AA8861F0039D425 /* StoreKit.framework in Frameworks */,
@@ -116,8 +124,6 @@
 				759AF0031AA885E70039D425 /* AudioToolbox.framework in Frameworks */,
 				75C4BD2D1AB0B7660000CFF1 /* TwitterKit.framework in Frameworks */,
 				90D491EC739D30E75825F9D1 /* libPods-spypal.a in Frameworks */,
-				759AF0011AA885B10039D425 /* Parse.framework in Frameworks */,
-				759AF0181AA886F60039D425 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,17 +167,21 @@
 				75C08FE51AA884330091440A /* AppDelegate.m */,
 				75C08FE71AA884330091440A /* ViewController.h */,
 				75C08FE81AA884330091440A /* ViewController.m */,
-				75E968321ACC4EA200FCCE0B /* ContactsViewController.h */,
-				75E968331ACC4EA200FCCE0B /* ContactsViewController.m */,
+				752BC7B01AD592200027678A /* FriendsViewController.h */,
+				752BC7B11AD592200027678A /* FriendsViewController.m */,
 				75C4BD301AB0B8AC0000CFF1 /* LoginViewController.h */,
 				75C4BD311AB0B8AC0000CFF1 /* LoginViewController.m */,
 				75C4BD321AB0B8AC0000CFF1 /* LoginViewController.xib */,
 				75C08FEA1AA884330091440A /* Main.storyboard */,
+				7581297D1AEF080800D555DA /* FriendDetailsViewController.h */,
+				7581297E1AEF080800D555DA /* FriendDetailsViewController.m */,
 				75C08FED1AA884330091440A /* Images.xcassets */,
 				75C08FEF1AA884330091440A /* LaunchScreen.xib */,
 				75C08FE01AA884330091440A /* Supporting Files */,
 				75C8C9C11ACB092500081D41 /* ProfileViewController.h */,
 				75C8C9C21ACB092500081D41 /* ProfileViewController.m */,
+				7581297A1AEEBFEC00D555DA /* TableViewCell.h */,
+				7581297B1AEEBFEC00D555DA /* TableViewCell.m */,
 			);
 			path = spypal;
 			sourceTree = "<group>";
@@ -205,6 +215,8 @@
 		A6AB8BE07E0276B2519DF160 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7582F8801AED027900E41761 /* Bolts.framework */,
+				7582F8811AED027900E41761 /* Parse.framework */,
 				759AF0201AA887810039D425 /* Social.framework */,
 				759AF01D1AA887540039D425 /* libz.1.1.3.dylib */,
 				759AF01B1AA8872C0039D425 /* AdSupport.framework */,
@@ -220,8 +232,6 @@
 				759AF0061AA885F90039D425 /* CoreGraphics.framework */,
 				759AF0041AA885EE0039D425 /* CFNetwork.framework */,
 				759AF0021AA885E70039D425 /* AudioToolbox.framework */,
-				759AEFFE1AA885B10039D425 /* Bolts.framework */,
-				759AEFFF1AA885B10039D425 /* Parse.framework */,
 				265C474F1172EAFE4E81D3EB /* libPods-spypal.a */,
 			);
 			name = Frameworks;
@@ -390,9 +400,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				75C4BD331AB0B8AC0000CFF1 /* LoginViewController.m in Sources */,
-				75E968341ACC4EA200FCCE0B /* ContactsViewController.m in Sources */,
+				752BC7B21AD592200027678A /* FriendsViewController.m in Sources */,
 				75C08FE91AA884330091440A /* ViewController.m in Sources */,
 				75C08FE61AA884330091440A /* AppDelegate.m in Sources */,
+				7581297F1AEF080800D555DA /* FriendDetailsViewController.m in Sources */,
+				7581297C1AEEBFEC00D555DA /* TableViewCell.m in Sources */,
 				75C08FE31AA884330091440A /* main.m in Sources */,
 				75C8C9C31ACB092500081D41 /* ProfileViewController.m in Sources */,
 			);
@@ -470,7 +482,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -505,7 +517,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -522,6 +534,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"/Users/andrei/Downloads/parse-library-1.7.1",
 				);
 				INFOPLIST_FILE = spypal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -540,6 +553,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"/Users/andrei/Downloads/parse-library-1.7.1",
 				);
 				INFOPLIST_FILE = spypal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
