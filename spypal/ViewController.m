@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *latitude;
 @property (weak, nonatomic) IBOutlet UILabel *longitude;
 @property (weak, nonatomic) IBOutlet UILabel *speed;
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
 - (IBAction)sendtoParse:(id)sender;
 - (IBAction)logout:(id)sender;
 @property (strong, nonatomic) CLLocationManager *locationManager;
@@ -27,20 +28,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    //    testObject[@"foo"] = @"bar";
-    //    [testObject saveInBackground];
-    
     _locationManager = [[CLLocationManager alloc]init]; // initializing locationManager
     _locationManager.delegate = self; // we set the delegate of locationManager to self.
     _locationManager.desiredAccuracy = kCLLocationAccuracyBest; // setting the accurac
     
-    [_latitude sizeToFit];
-    [_longitude sizeToFit];
-    [_speed sizeToFit];
-    
     [_locationManager requestAlwaysAuthorization];
     [_locationManager startUpdatingLocation];
+    
+    
+    [self.mapView setDelegate:self];
+    [self.mapView setShowsUserLocation:YES];
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -68,6 +66,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) mapView:(MKMapView *) mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    [mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.2f, 0.2f)) animated:YES];
 }
 
 - (IBAction)updateLocation:(id)sender {
