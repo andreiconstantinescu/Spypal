@@ -196,11 +196,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="rrM-RL-RMz">
+                                <rect key="frame" x="16" y="288" width="288" height="260"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="LongTextLabel" destination="Fs8-aI-FyL" id="Lad-Z6-6oR"/>
+                        <outlet property="friendLocation" destination="rrM-RL-RMz" id="nDw-ld-xJs"/>
                         <outlet property="latTextLabel" destination="xQR-87-UXW" id="FdI-8K-J4T"/>
                         <outlet property="phoneNumberTextLabel" destination="1bG-QF-ln8" id="pYF-Zy-xfx"/>
                         <outlet property="usernameTextlabel" destination="5iZ-nf-5Ak" id="yAp-SA-OIu"/>
@@ -208,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F5c-hN-aKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-434" y="-827"/>
+            <point key="canvasLocation" x="-423" y="-827"/>
         </scene>
         <!--Item-->
         <scene sceneID="SNh-7B-qgp">

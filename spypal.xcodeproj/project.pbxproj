@@ -10,6 +10,7 @@
 		752BC7B21AD592200027678A /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752BC7B11AD592200027678A /* FriendsViewController.m */; };
 		7581297C1AEEBFEC00D555DA /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7581297B1AEEBFEC00D555DA /* TableViewCell.m */; };
 		7581297F1AEF080800D555DA /* FriendDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7581297E1AEF080800D555DA /* FriendDetailsViewController.m */; };
+		758129811AEF1E7A00D555DA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 758129801AEF1E7A00D555DA /* MapKit.framework */; };
 		7582F8821AED027900E41761 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7582F8801AED027900E41761 /* Bolts.framework */; };
 		7582F8831AED027900E41761 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7582F8811AED027900E41761 /* Parse.framework */; };
 		759AF0031AA885E70039D425 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759AF0021AA885E70039D425 /* AudioToolbox.framework */; };
@@ -59,6 +60,7 @@
 		7581297B1AEEBFEC00D555DA /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		7581297D1AEF080800D555DA /* FriendDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDetailsViewController.h; sourceTree = "<group>"; };
 		7581297E1AEF080800D555DA /* FriendDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetailsViewController.m; sourceTree = "<group>"; };
+		758129801AEF1E7A00D555DA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7582F8801AED027900E41761 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		7582F8811AED027900E41761 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		759AF0021AA885E70039D425 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -106,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				758129811AEF1E7A00D555DA /* MapKit.framework in Frameworks */,
 				759AF0211AA887810039D425 /* Social.framework in Frameworks */,
 				759AF01F1AA887690039D425 /* Accounts.framework in Frameworks */,
 				759AF01E1AA887540039D425 /* libz.1.1.3.dylib in Frameworks */,
@@ -215,6 +218,7 @@
 		A6AB8BE07E0276B2519DF160 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				758129801AEF1E7A00D555DA /* MapKit.framework */,
 				7582F8801AED027900E41761 /* Bolts.framework */,
 				7582F8811AED027900E41761 /* Parse.framework */,
 				759AF0201AA887810039D425 /* Social.framework */,
