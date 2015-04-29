@@ -39,6 +39,8 @@
 		75C4BD331AB0B8AC0000CFF1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75C4BD311AB0B8AC0000CFF1 /* LoginViewController.m */; };
 		75C4BD341AB0B8AC0000CFF1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75C4BD321AB0B8AC0000CFF1 /* LoginViewController.xib */; };
 		75C8C9C31ACB092500081D41 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75C8C9C21ACB092500081D41 /* ProfileViewController.m */; };
+		75FFAD481AEFF828002BEE54 /* u.png in Resources */ = {isa = PBXBuildFile; fileRef = 75FFAD471AEFF828002BEE54 /* u.png */; };
+		75FFAD4B1AEFFD43002BEE54 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFAD4A1AEFFD43002BEE54 /* Friend.m */; };
 		90D491EC739D30E75825F9D1 /* libPods-spypal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C474F1172EAFE4E81D3EB /* libPods-spypal.a */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +101,9 @@
 		75C4BD321AB0B8AC0000CFF1 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		75C8C9C11ACB092500081D41 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		75C8C9C21ACB092500081D41 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		75FFAD471AEFF828002BEE54 /* u.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = u.png; sourceTree = "<group>"; };
+		75FFAD491AEFFD43002BEE54 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
+		75FFAD4A1AEFFD43002BEE54 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
 		E3F845E71538B62F24C2E5DA /* Pods-spypal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spypal.release.xcconfig"; path = "Pods/Target Support Files/Pods-spypal/Pods-spypal.release.xcconfig"; sourceTree = "<group>"; };
 		F9BABC2047FCB5B7A9F22DDB /* Pods-spypal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spypal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-spypal/Pods-spypal.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +183,9 @@
 				75C08FEA1AA884330091440A /* Main.storyboard */,
 				7581297D1AEF080800D555DA /* FriendDetailsViewController.h */,
 				7581297E1AEF080800D555DA /* FriendDetailsViewController.m */,
+				75FFAD491AEFFD43002BEE54 /* Friend.h */,
+				75FFAD4A1AEFFD43002BEE54 /* Friend.m */,
+				75FFAD461AEFF7F2002BEE54 /* images */,
 				75C08FED1AA884330091440A /* Images.xcassets */,
 				75C08FEF1AA884330091440A /* LaunchScreen.xib */,
 				75C08FE01AA884330091440A /* Supporting Files */,
@@ -213,6 +221,14 @@
 				75C08FFB1AA884330091440A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		75FFAD461AEFF7F2002BEE54 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				75FFAD471AEFF828002BEE54 /* u.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 		A6AB8BE07E0276B2519DF160 /* Frameworks */ = {
@@ -338,6 +354,7 @@
 				75C4BD341AB0B8AC0000CFF1 /* LoginViewController.xib in Resources */,
 				75C4BD2E1AB0B7660000CFF1 /* TwitterKitResources.bundle in Resources */,
 				75C08FEC1AA884330091440A /* Main.storyboard in Resources */,
+				75FFAD481AEFF828002BEE54 /* u.png in Resources */,
 				75C08FF11AA884330091440A /* LaunchScreen.xib in Resources */,
 				75C08FEE1AA884330091440A /* Images.xcassets in Resources */,
 			);
@@ -406,6 +423,7 @@
 				75C4BD331AB0B8AC0000CFF1 /* LoginViewController.m in Sources */,
 				752BC7B21AD592200027678A /* FriendsViewController.m in Sources */,
 				75C08FE91AA884330091440A /* ViewController.m in Sources */,
+				75FFAD4B1AEFFD43002BEE54 /* Friend.m in Sources */,
 				75C08FE61AA884330091440A /* AppDelegate.m in Sources */,
 				7581297F1AEF080800D555DA /* FriendDetailsViewController.m in Sources */,
 				7581297C1AEEBFEC00D555DA /* TableViewCell.m in Sources */,

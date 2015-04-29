@@ -9,6 +9,7 @@
 #import "FriendDetailsViewController.h"
 
 @interface FriendDetailsViewController ()
+
 @end
 
 @implementation FriendDetailsViewController
@@ -18,6 +19,8 @@
 @synthesize latTextLabel = _latTextLabel;
 @synthesize LongTextLabel = _LongTextLabel;
 @synthesize mapView = _mapView;
+@synthesize currentFriend;
+
 - (IBAction)callFriend:(id)sender {
     NSURL *URL = [NSURL URLWithString:[@"tel://" stringByAppendingString:labelPhonenumber]];
     
@@ -27,11 +30,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [_usernameTextlabel setText:labelUsername];
+//    [_usernameTextlabel setText:labelUsername];
+    [_usernameTextlabel setText:currentFriend.nickname];
     [_phoneNumberTextLabel setText:labelPhonenumber];
     [_latTextLabel setText:labelLat];
     [_LongTextLabel setText:labelLong];
     
+    _phoneNumberTextLabel.font = [UIFont fontWithName:@"AvenirNext-Regular" size:16];
    
     
     

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "Friend.h"
 
 @interface FriendDetailsViewController : UIViewController<MKMapViewDelegate> {
     NSString *labelUsername;
@@ -22,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *LongTextLabel;
 @property (strong, nonatomic) IBOutlet MKMapView *friendLocation;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) Friend *currentFriend;
 
 - (void) setUsername: (NSString *)text;
 - (void) setPhonenumber: (NSString *)text;

@@ -11,5 +11,4 @@
 @interface FriendsViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource>
 
 typedef void (^AddresBookFetchResult)(NSArray *fetchResults, NSError *error);
-
 @end

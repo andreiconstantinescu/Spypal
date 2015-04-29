@@ -11,10 +11,12 @@
 #import <AddressBookUI/AddressBookUI.h>
 #import <Parse/Parse.h>
 #import "FriendDetailsViewController.h"
+#import "Friend.h"
 
 @interface FriendsViewController ()
 
 @property (nonatomic, strong) NSMutableArray *friendsArray;
+@property (nonatomic, strong) NSMutableArray *friendObjectArray;
 @end
 
 @implementation FriendsViewController
@@ -29,10 +31,19 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self loadData];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+    _friendObjectArray = [[NSMutableArray alloc] init];
+    [self loadData];
+}
+
+- (void)loadData {
     ABAddressBookRef addressBook = ABAddressBookCreate();
     
     __block BOOL accessGranted = NO;
@@ -53,6 +64,32 @@
             NSLog(@"%lu",(unsigned long)fetchResults.count);
             _friendsArray = [[NSMutableArray alloc] init];
             [_friendsArray addObjectsFromArray:fetchResults];
+            for(int i=0; i< [_friendObjectArray count]; ++i) {
+                Friend *temp = [_friendObjectArray objectAtIndex:i];
+                BOOL exists = NO;
+                NSLog(@"%@", temp.parsedPhone);
+
+                for(PFObject *temp2 in _friendsArray) {
+                    NSLog(@"%@", temp.parsedPhone);
+                    NSString *t1 = temp.parsedPhone;
+                    NSString *t2 = [temp2 valueForKey:@"phoneNumber"];
+                    
+                    if([t1 isEqualToString: t2]){
+//                        NSLog(@"%@", @"DA");
+//                    if([temp.parsedPhone isEqualToString:[temp2 valueForKey:@"phoneNumber"]]) {
+//
+                        [temp setNickname:[temp2 valueForKey:@"nickname"]];
+                        [temp setLatitude:[temp2 valueForKey:@"currentLocationLat"]];
+                        [temp setLongitude:[temp2 valueForKey:@"currentLocationLon"]];
+                        exists = YES;
+                    }
+                }
+                if(!exists) {
+                    NSLog(@"%@", temp.parsedPhone);
+                    [_friendObjectArray removeObject:temp];
+                    i--;
+                }
+            }
             [self.tableView reloadData];
         }];
     }
@@ -86,8 +123,27 @@
             
         }
         
+        //For Images
+        NSData *imgData = (__bridge NSData *)ABPersonCopyImageData(ref);
+        if (imgData != nil) {
+            [dOfPerson setObject:imgData forKey:@"imageThumbnail"];
+        } 
+        
+        
+//        UIImage *img = [UIImage imageWithData:imgData];
+        
+        
+        
+        
+//        ABMutableMultiValueRef image  = ABRecordCopyValue(ref, kABPersonImageFormatThumbnail);
+//        if(ABMultiValueGetCount(image) > 0) {
+//            [dOfPerson setObject:(__bridge UIImage *)ABMultiValueCopyValueAtIndex(image, 0) forKey:@"image"];
+//        }
+        
         //For Phone number
         NSString* mobileLabel;
+        
+//        NSLog(@"%@", dOfPerson);
         
         for(CFIndex i = 0; i < ABMultiValueGetCount(phones); i++) {
             mobileLabel = (__bridge NSString*)ABMultiValueCopyLabelAtIndex(phones, i);
@@ -111,8 +167,11 @@
     for (NSMutableDictionary * object in contactList) {
         
         
-        
         if (object[@"Phone"]) {
+            
+            Friend *friend = [[Friend alloc] init];
+            [friend setRawPhone:object[@"Phone"]];
+
             object[@"Phone"] = [(NSString *)object[@"Phone"] stringByReplacingOccurrencesOfString:@"\u00A0" withString:@""];
             object[@"Phone"] = [(NSString *)object[@"Phone"] stringByReplacingOccurrencesOfString:@" " withString:@""];
             object[@"Phone"] = [(NSString *)object[@"Phone"] stringByReplacingOccurrencesOfString:@"(" withString:@""];
@@ -126,6 +185,12 @@
                 object[@"Phone"]=[NSString stringWithFormat:@"+4%@", object[@"Phone"]];
             }
             [phoneNumbers addObject:object[@"Phone"]];
+            
+            [friend setParsedPhone:object[@"Phone"]];
+            [friend setImageData:object[@"imageThumbnail"]];
+            if (friend.rawPhone != nil)
+                [_friendObjectArray addObject:friend];
+//            NSLog(@"%@", object[@"imageThumbnail"]);  // matrix
         }
         
     }
@@ -133,7 +198,6 @@
     
     //    NSLog(@"Contacts = %@", phoneNumbers);
     
-    NSMutableArray * currentFriends = [[NSMutableArray alloc] init];
     PFQuery *query = [PFQuery queryWithClassName:@"User"];
     [query whereKey:@"phoneNumber" containedIn:phoneNumbers];
     [query findObjectsInBackgroundWithBlock:^(NSArray *userObjects, NSError *error) {
@@ -171,6 +235,10 @@
     return _friendsArray.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -182,7 +250,17 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [[_friendsArray objectAtIndex:indexPath.row] valueForKey:@"nickname"];
+//    cell.textLabel.text = [[_friendsArray objectAtIndex:indexPath.row] valueForKey:@"nickname"];
+//    cell.imageView.image = [UIImage imageWithData: [[[_friendsArray objectAtIndex:indexPath.row] valueForKey:@"imageData"] valueForKey:@"imageData"]];
+    
+    cell.textLabel.text = [[_friendObjectArray objectAtIndex:indexPath.row] nickname];
+    cell.imageView.image = [UIImage imageWithData:[[_friendObjectArray objectAtIndex:indexPath.row] imageData]];
+    if(cell.imageView.image == nil)
+        cell.imageView.image = [UIImage imageNamed:@"u.png"];
+    
+    cell.imageView.image = [self image:cell.imageView.image scaledToSize:CGSizeMake(40, 40)];
+    cell.imageView.layer.cornerRadius = 20;
+    cell.imageView.layer.masksToBounds = YES;
     return cell;
 }
 
@@ -190,6 +268,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     FriendDetailsViewController *detailsViewCtrl = [self.storyboard instantiateViewControllerWithIdentifier:@"FriendDetailsViewController"];
+    detailsViewCtrl.currentFriend = [_friendObjectArray objectAtIndex:indexPath.row];
     
     NSString *username = [[_friendsArray objectAtIndex:indexPath.row] valueForKey:@"nickname"];
     NSString *phonenumber = [[_friendsArray objectAtIndex:indexPath.row] valueForKey:@"phoneNumber"];
@@ -205,6 +284,15 @@
     
     
     [self.navigationController pushViewController:detailsViewCtrl animated:YES];
+}
+
+- (UIImage *)image:(UIImage *)image scaledToSize:(CGSize)newSize;
+{
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, image.scale);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 
